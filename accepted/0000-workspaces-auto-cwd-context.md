@@ -16,6 +16,7 @@ Now that we are landing support to **workspace-aware** commands (see: [#117](htt
 
 ## Rationale and Alternatives
 
+- Use the logic to figuring out if a **workspace-aware** command was run from the context of a child **workspace** folder but only print a warning message to users, similar to our existing set of "Did you mean?" warning messages. Educating the user on the usage of the `--workspace` config rather than automatically switching the context.
 - Only implement the auto-switch behavior in arborist-reify related methods. namely: `ci|dedupe|find-dupes|install-ci-test|install-test|install|link|rebuild|update|uninstall|update`
 - Make it so that the auto-switch behavior of the cli is disabled by default and needs some type of opt-in mechanism.
 - Do not implement any auto-switch mechanism
